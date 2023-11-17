@@ -29,7 +29,7 @@ const Login = () => {
             loginUser(userInfo);
             setIsConnecting(false);
             spinRef.current.classList.remove("spin-animation");
-        }, 100);
+        }, 1000);
     }
 
     const toggleKeepLogedIn = () => {

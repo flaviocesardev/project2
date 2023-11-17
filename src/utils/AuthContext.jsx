@@ -24,16 +24,17 @@ export const AuthProvider = ({ children }) => {
                 },
                 body: JSON.stringify({
                     "login": "login1",
-                    "password": "password2"
+                    "password": "senha1"
                 }),
             });
 
             let data = await response.json()
-            
+            console.log(data)
             if (data.token) {
                 setUser(true)
                 localStorage.setItem("auth-test", data.token);
                 console.log("logado", localStorage.getItem("auth-test"))
+                navigate('/exercises')
             } else {
                 console.log("User Not Found!!!")
             }
@@ -55,27 +56,33 @@ export const AuthProvider = ({ children }) => {
     const checkUserStatus = async () => {
         if (keepLoggedIn) {
             const token = localStorage.getItem("auth-test");
-
+            console.log("to aqui")
             if (token) {
-                const response = await fetch('http://localhost:3050/verify', {
-                    method: 'GET',
+                const response = await fetch('http://26.30.244.54:8080/auth/verify', {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-access-token': token
+                        'Authorization': token
                     },
                 });
-                let data = await response.json()
+                if (response.status != 403) {
+                    let data = await response.json()
 
-                if (data.auth) {
-                    setUser(true);
-                    console.log(data.user);
+                    if (data.status) {
+                        console.log("ta safe o token.")
+                        console.log(data);
+                        setUser(true);
+                    }
+                } else {
+                    localStorage.setItem('STFC_KEEP', false)
+                    logoutUser();
                 }
             }
         }
 
 
         setLoading(false)
-        navigate("/login")
+        navigate("/exercises")
     };
 
 

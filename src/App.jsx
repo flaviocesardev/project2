@@ -8,9 +8,11 @@ import Home from './routes/Home';
 import CodeView from './routes/CodeView';
 import Error404 from './routes/Error404';
 import Navbar from './components/NavBar/Navbar';
+import Exercises from './routes/Exercises';
 
 
 import PrivateRoutes from './utils/PrivateRoutes';
+import CreateExercise from './routes/CreateExercise';
 
 function App() {
 
@@ -21,9 +23,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route path="/" element={<Home />} />
               <Route path="/teste" element={<CodeView />} />
+              <Route path="/exercises" element={<Exercises />} />
+              <Route path='/create' element={<CreateExercise />} />
             </Route>
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<Error404 />} />

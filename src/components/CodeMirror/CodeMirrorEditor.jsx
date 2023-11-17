@@ -22,13 +22,14 @@ function CodeMirrorEditor(props) {
     async function handleForm() {
         console.log("Texto enviado para request: " + userCode);
         const modifiedUserCode = await removerQuebrasDeLinha(userCode);
-        //http://26.30.244.54:8080
-        fetch('http://localhost:3000/teste', {
+
+        fetch('http://26.30.244.54:8080/teste', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                'Authorization': localStorage.getItem('auth-test')
             },
-            body: JSON.stringify({ stringParam: modifiedUserCode, student: { id: 1 }, exercise: { id: 1 } }), // Correção: Enviar como corpo da solicitação
+            body: JSON.stringify({ script: modifiedUserCode, exercise: { id: 2 } }), // Correção: Enviar como corpo da solicitação
         })
             .then(res => res.json())
             .then(res => {

@@ -1,29 +1,48 @@
+import { useEffect } from 'react';
 import './QuestionDescripition.css'
+import { useState } from 'react';
 
 
 function QuestionDescripition() {
+    const [dados, setDados] = useState(null);
+    useEffect(() => {
+
+        // fetch('http://26.30.244.54:8080/exercise/1', {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Authorization': localStorage.getItem('auth-test')
+        //     }
+        // }).then(res => res.json()).then(res => { setDados(res), console.log(dados.exercise) });
+    }, []);
+
     return (
 
         <div className="question-wrapper">
-            <h1>Soma</h1>
-            <p>
-                Implemente um subprograma capaz de, dado dois número como parâmetro, retornar a sua soma.
-            </p>
 
-            <p>Exemplo de entrada</p>
+            {/* {dados ? (
+                <>
+                    <h1>{dados.exercise.title}</h1>
+                    <p>
+                        {dados.exercise.question}
+                    </p>
 
-            <pre className='high'>
-                {`n1 = 5, n2 + 2`}
-            </pre>
+                    <p>Exemplo de entrada</p>
 
-            <p>Saida esperada</p>
-            <pre className='high'>
-                {`7`}
-            </pre>
+                    <pre className='high'>
+                        {dados.exercise.input}
+                    </pre>
 
+                    <p>Saida esperada</p>
+                    <pre className='high'>
+                        {dados.exercise.output}
+                    </pre>
+                </>
+            ) : (
+                <p>Carregando...</p>
+            )} */}
 
         </div>
-
     );
 }
 

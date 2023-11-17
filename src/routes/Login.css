@@ -28,7 +28,8 @@ form {
     padding: 1rem;
     width: 99%;
     height: 99%;
-    background-color: #222327;
+    /* background-color: #222327; */
+    background-color: #16171b;
     border-radius: 0.5rem;
 }
 
@@ -53,7 +54,7 @@ div.input-wrapper input {
     border: none;
     height: 30%;
     padding: 1rem;
-    background: #16171b;
+    background: #222327;
     color: #e3e1e8;
     border-radius: 0.2rem;
 }
