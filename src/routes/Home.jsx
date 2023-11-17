@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import "../routes/Home.css"
 import { Link } from 'react-router-dom'
 
@@ -19,6 +20,13 @@ const Home = () => {
             <button className='button-home' >Iniciar</button>
             </Link>
         </div>
+=======
+
+const Home = () => {
+    return (
+    <div>
+        <h1>Home</h1>
+>>>>>>> 4ea37aeb609d4f530a3c7f16bdccf301485364d7
     </div>
     )
 }

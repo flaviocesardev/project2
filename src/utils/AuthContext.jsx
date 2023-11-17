@@ -6,7 +6,11 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
+<<<<<<< HEAD
     const [user, setUser] = useState(true);
+=======
+    const [user, setUser] = useState(false);
+>>>>>>> 4ea37aeb609d4f530a3c7f16bdccf301485364d7
     const [keepLoggedIn, setKeepLoggedIn] = useState(JSON.parse(localStorage.getItem("STFC_KEEP")) || false);
 
     useEffect(() => {
@@ -57,6 +61,7 @@ export const AuthProvider = ({ children }) => {
             const token = localStorage.getItem("auth-test");
 
             if (token) {
+<<<<<<< HEAD
                 // const response = await fetch('http://localhost:3050/verify', {
                 //     method: 'GET',
                 //     headers: {
@@ -70,6 +75,21 @@ export const AuthProvider = ({ children }) => {
                 //     setUser(true);
                 //     console.log(data.user);
                 // }
+=======
+                const response = await fetch('http://localhost:3050/verify', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-access-token': token
+                    },
+                });
+                let data = await response.json()
+
+                if (data.auth) {
+                    setUser(true);
+                    console.log(data.user);
+                }
+>>>>>>> 4ea37aeb609d4f530a3c7f16bdccf301485364d7
             }
         }
 
