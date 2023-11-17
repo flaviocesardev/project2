@@ -1,0 +1,32 @@
+.div-all-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; /* Isso faz com que a div ocupe 100% da altura da viewport */
+}
+
+.div-h1-home,
+.div-p-home,
+.div-button-home {
+    margin-bottom: 20px; /* Ajuste o valor conforme necessário para dar espaço entre os elementos */
+}
+
+.div-h1-home{
+    color: white;
+}
+
+.button-home {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f8b659;
+    color: #222327;
+    font-size: 1.1rem;
+    transition: ease-in 200ms;
+    border-radius: 0.5rem;    
+}
+
+.button-home:hover {
+    background-color: #f8b659e3;
+}
+
