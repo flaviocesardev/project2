@@ -1,0 +1,54 @@
+div.side{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.editor-wrapper{
+    width: 80%;
+    height: 80%;
+}
+div.top-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    background-color: #222327;
+    border-radius: 0.5rem 0.5rem 0 0;
+} 
+
+div.top-bar h3{
+    font-size: 17px;
+    color: #c0c0c0;
+}
+
+.editor{
+    width: 100%;
+    height: 100%;
+    overflow: 'auto';
+    font-size: 1.1rem;
+}
+
+div.send-btn{
+    background-color: transparent;
+    color: #6795de;
+    border-radius: 8px;
+    background-color: #121216;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    border: solid #6795de 1px;
+}
+
+.send-btn:hover{
+    transform: none;
+    background-color: #0f0f11;
+}
