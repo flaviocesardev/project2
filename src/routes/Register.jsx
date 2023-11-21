@@ -1,17 +1,6 @@
-import React,{useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../utils/AuthContext';
+import React from 'react'
 
 const Register = () => {
-    const navigate = useNavigate();
-    const {user} = useAuth();
-
-    useEffect(() => {
-        if (user) {
-            navigate('/home');
-        }
-    }, [user])
-
     return (
         <div>
             <form>

@@ -1,37 +1,21 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './utils/AuthContext';
+import './App.css'
 
-import Login from './routes/Login';
-import Register from './routes/Register';
-import Home from './routes/Home';
-import CodeView from './routes/CodeView';
-import Error404 from './routes/Error404';
-import Navbar from './components/NavBar/Navbar';
+// 2 - reaproveitamento de estrutura
+import { Outlet } from 'react-router-dom'
 
 
-import PrivateRoutes from './utils/PrivateRoutes';
+// 4 - Navegando em páginas
+import Navbar from './components/Navbar'
 
 function App() {
+  
 
-  return (
-    <div className="App">
-      <Router >
-        <AuthProvider>
-          <Navbar />
-          <Routes>
-            <Route element={<PrivateRoutes />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/teste" element={<CodeView />} />
-            </Route>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-        </AuthProvider>
-
-      </Router>
-    </div >
+  return (    
+      <div className="App">
+      <Navbar />
+      <Outlet />
+      <footer className='footer-login'>project2</footer>
+      </div>    
   )
 }
 
