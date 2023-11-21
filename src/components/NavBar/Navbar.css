@@ -1,3 +1,7 @@
+
+
+
+
 nav {
     display: flex;
     justify-content: center;
@@ -19,3 +23,27 @@ nav {
     width: 10%;
     text-align: center;
 }
+
+
+/* Navbar.css */
+.nav-button {
+    text-decoration: none;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .nav-button::after {
+    content: '';
+    display: block;
+    height: 3px; /* Altura do underline */
+    width: 0;
+    background: linear-gradient(100deg, rgba(240,152,25,1) 0%, rgba(237,222,93,1) 100%);
+    position: absolute;
+    bottom: 0;
+    transition: width 0.4s; /* Duração da transição */
+  }
+  
+  .nav-button:hover::after {
+    width: 100%;
+  }
+  
