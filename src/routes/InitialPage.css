@@ -1,4 +1,4 @@
-.home-wrapper {
+.initial-wrapper {
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -10,15 +10,15 @@
     overflow-x: hidden;
 }
 
-.home-wrapper h1{
+.initial-wrapper h1{
     color: #ffffff;
 }
 
-.home-wrapper h2{
+.initial-wrapper h2{
     color: #878686;
 }
 
-.home-wrapper #register-btn{
+.initial-wrapper #register-btn{
     transition: ease-in 100ms;
     text-decoration: none;
     font-weight: 900;
@@ -31,7 +31,7 @@
     width: 25%;
 }
 
-.home-wrapper #register-btn:hover{
+.initial-wrapper #register-btn:hover{
     color: #ffffff;
 }
 

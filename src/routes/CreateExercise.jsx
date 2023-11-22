@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CreateExercise.css'
 
 function CreateExercise() {
@@ -10,6 +10,34 @@ function CreateExercise() {
         output: '',
     });
 
+    const [topics, setTopics] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch(`http://26.30.244.54:8080/topic/all`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': localStorage.getItem('auth-test')
+                    }
+                });
+
+                if (response.status === 403) {
+                    console.log("O token expirou");
+                    logoutUser();
+                } else {
+                    const data = await response.json();
+                    setTopics(data)
+                }
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+            }
+        }
+
+        fetchData();
+    }, [])
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setExerciseData({ ...exerciseData, [name]: value });
@@ -20,13 +48,7 @@ function CreateExercise() {
 
         console.log(exerciseData)
 
-
-
-
-        // Aqui você pode lidar com os dados do exercício, como enviá-los para um servidor ou fazer outra operação
-        // console.log("exercise sended: ", exerciseToSend);
-
-        let response = await fetch('http://26.30.244.54:8080/exercise/register', {
+        let response = await fetch('http://26.30.244.54:8080/exercise/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,15 +69,15 @@ function CreateExercise() {
 
         console.log(data)
 
-
         // Limpar o formulário após o envio, se necessário
-        // setExerciseData({
-        //     topic: '',
-        //     title: '',
-        //     description: '',
-        //     input: '',
-        //     output: '',
-        // });
+        setExerciseData({
+            topic: '',
+            title: '',
+            question: '',
+            input: '',
+            output: '',
+        });
+
     };
 
     return (
@@ -67,8 +89,13 @@ function CreateExercise() {
                         <option value="" disabled>
                             Selecione um assunto
                         </option>
-                        <option value="1">Subprogramas</option>
-                        <option value="2">Array</option>
+                        {topics &&
+                            topics.map(topic => (
+                                <option key={topic.id} value={topic.id}>
+                                    {topic.title} 
+                                </option>
+                            ))
+                        }
                     </select>
                 </label>
             </div>

@@ -4,7 +4,7 @@ import { AuthProvider } from './utils/AuthContext';
 
 import Login from './routes/Login';
 import Register from './routes/Register';
-import Home from './routes/Home';
+import InitialPage from './routes/InitialPage';
 import CodeView from './routes/CodeView';
 import Error404 from './routes/Error404';
 import Navbar from './components/NavBar/Navbar';
@@ -23,11 +23,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route element={<PrivateRoutes />}>
-              <Route path="/teste" element={<CodeView />} />
+              <Route path="/teste/:exerciseID" element={<CodeView />} />
               <Route path="/exercises" element={<Exercises />} />
               <Route path='/create' element={<CreateExercise />} />
             </Route>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<InitialPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<Error404 />} />

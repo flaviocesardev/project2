@@ -56,10 +56,9 @@ export const AuthProvider = ({ children }) => {
     const checkUserStatus = async () => {
         if (keepLoggedIn) {
             const token = localStorage.getItem("auth-test");
-            console.log("to aqui")
             if (token) {
                 const response = await fetch('http://26.30.244.54:8080/auth/verify', {
-                    method: 'POST',
+                    method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': token
@@ -69,8 +68,6 @@ export const AuthProvider = ({ children }) => {
                     let data = await response.json()
 
                     if (data.status) {
-                        console.log("ta safe o token.")
-                        console.log(data);
                         setUser(true);
                     }
                 } else {
@@ -82,7 +79,6 @@ export const AuthProvider = ({ children }) => {
 
 
         setLoading(false)
-        navigate("/exercises")
     };
 
 
