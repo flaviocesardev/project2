@@ -1,0 +1,26 @@
+.exercise-wrapper {
+    background: #222327;
+    margin-top: 1rem;
+    display: flex;
+    height: 15vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.exe-info{
+    width: 50%;
+}
+
+.exercise-btn{
+    text-decoration: none;
+    display: inline-block;
+    min-width: 8%;
+    text-align: center;
+    color: #222327;
+    background: linear-gradient(90deg, #F09819 3.67%, #EDDE5D 100%);
+    padding: 0.4rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+}

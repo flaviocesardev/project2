@@ -1,0 +1,52 @@
+nav {
+    height: 10vh;
+    background: linear-gradient(90deg, #16171B 2.15%, #222327 134.26%);
+    border-bottom: solid 1px #505050;
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+}
+
+.nav-button {
+    font-weight: 900;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    padding: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 20%;
+    text-align: center;
+    align-self: flex-end;
+}
+
+#login-btn {
+    color: #222327;
+    background: linear-gradient(90deg, #F09819 3.67%, #EDDE5D 100%);
+}
+
+#login-btn:hover {
+    color: #ffffff;
+}
+
+.logo-wrapper,
+.links-wrapper {
+    width: 50%;
+    align-self: center;
+}
+
+.logo-wrapper{
+    cursor: default;
+    display: flex;
+    align-items: center;
+}
+
+.links-wrapper{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+
+.logo-wrapper h1{
+    color: #ffffff;
+}

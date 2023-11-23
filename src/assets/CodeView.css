@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.app-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: #16171B;
+}
+div .left{
+    width: 50%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+button{
+    background-color: transparent;
+    color: #c0c0c0;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover{
+    transform: none;
+    color: #6795de;
+    border-color: transparent;
+}
+
+.current{
+    background-color: #222327;
+    color: #ebebeb;
+}
+.current:hover{
+    transform: none;
+
+    color: #ebebeb;
+}
+
+div .buttons-wrapper{
+    display: flex;
+    gap: 1em;
+    width: 100%;
+}

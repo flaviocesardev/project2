@@ -1,0 +1,39 @@
+.wrapper {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1rem;
+    overflow: auto;
+    border:#222327 solid 2px;
+    background-color: #131414;
+    border-radius: 8px;
+    color: #fff;
+    
+}
+
+p{
+    color: rgba(255, 255, 255, .6);
+}
+
+.title{
+    color: #ffffff;
+    padding: 0.5em;
+}
+
+.wrapper.approved{
+    border:#0e9709 solid 2px;
+}
+
+.wrapper.notApproved{
+    border:#e10707 solid 2px;
+}
+
+.title.approved{
+    border-left:#0e9709 solid 5px;
+}
+
+.title.notApproved{
+    border-left:#e10707 solid 5px;
+}
