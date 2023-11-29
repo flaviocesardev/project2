@@ -6,7 +6,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
-    const [user, setUser] = useState(true);
+    const [user, setUser] = useState(false);
     const [keepLoggedIn, setKeepLoggedIn] = useState(JSON.parse(localStorage.getItem("STFC_KEEP")) || false);
 
     useEffect(() => {
