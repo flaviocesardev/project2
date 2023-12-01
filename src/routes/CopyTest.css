@@ -1,0 +1,40 @@
+.copy-test-wrapper{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    height: 100vh;
+}
+
+.copy-form-wrapper{
+    width: 50%;
+    height: 100%;    
+}
+
+.copy-form{
+    width: 100%;
+    height: 100%;
+}
+
+.copy-result{
+    padding: 1rem;
+    overflow-y: auto;
+    width: 50%;
+    height: 100%;
+    background-color: #16171b;
+}
+.copy-result li{
+    list-style: none;
+}
+
+.COPY{
+    color: red;
+}
+
+.WARNING{
+    color: yellow;
+}
+
+.CHECKED{
+    color: green;
+}

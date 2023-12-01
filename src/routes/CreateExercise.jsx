@@ -48,7 +48,7 @@ function CreateExercise() {
 
         console.log(exerciseData)
 
-        let response = await fetch('http://26.30.244.54:8080/exercise/create', {
+        let response = await fetch('http://26.30.244.54:8080/exercise/professor/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

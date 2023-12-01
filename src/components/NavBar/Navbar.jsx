@@ -15,10 +15,10 @@ const Navbar = () => {
                         <div className="nav-button" onClick={logoutUser}>Deslogar</div>
                     </div>
                     <div className="links-wrapper">
-                        <Link className="nav-button" to="/">Home</Link>
-                        <Link className="nav-button" to="/exercises">Profile</Link>
-                        <Link className="nav-button" to="/teste">Teste</Link>
+                        <Link className="nav-button" to="/home">Home</Link>
+                        <Link className="nav-button" to="/exercises">Exercises</Link>
                         <Link className="nav-button" to="/create">Create</Link>
+                        <Link className="nav-button" to="/copy">Copy Test</Link>
                     </div>
                 </>
             ) : (

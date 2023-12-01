@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext, useContext } from "react"
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -23,8 +23,8 @@ export const AuthProvider = ({ children }) => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    "login": "login1",
-                    "password": "senha1"
+                    login: userInfo.username,
+                    password: userInfo.password
                 }),
             });
 
@@ -64,12 +64,8 @@ export const AuthProvider = ({ children }) => {
                         'Authorization': token
                     },
                 });
-                if (response.status != 403) {
-                    let data = await response.json()
-
-                    if (data.status) {
-                        setUser(true);
-                    }
+                if (response.status == 200) {
+                    setUser(true);
                 } else {
                     localStorage.setItem('STFC_KEEP', false)
                     logoutUser();

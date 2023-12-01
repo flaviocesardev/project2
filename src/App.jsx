@@ -9,10 +9,12 @@ import CodeView from './routes/CodeView';
 import Error404 from './routes/Error404';
 import Navbar from './components/NavBar/Navbar';
 import Exercises from './routes/Exercises';
+import Home from './routes/Home'
 
 
 import PrivateRoutes from './utils/PrivateRoutes';
 import CreateExercise from './routes/CreateExercise';
+import CopyTest from './routes/CopyTest';
 
 function App() {
 
@@ -24,8 +26,10 @@ function App() {
           <Routes>
             <Route element={<PrivateRoutes />}>
               <Route path="/teste/:exerciseID" element={<CodeView />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/exercises" element={<Exercises />} />
               <Route path='/create' element={<CreateExercise />} />
+              <Route path='/copy' element={<CopyTest />} />
             </Route>
             <Route path="/" element={<InitialPage />} />
             <Route path="/login" element={<Login />} />
@@ -33,7 +37,6 @@ function App() {
             <Route path="*" element={<Error404 />} />
           </Routes>
         </AuthProvider>
-
       </Router>
     </div >
   )
